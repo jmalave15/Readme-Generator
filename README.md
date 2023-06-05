@@ -21,9 +21,6 @@ by filling theses content (Title, Description, Process, Usage, GitHub username, 
 ## Usage
 
 - First clone the repository
-
-  ![alt text](./assests/screen1.png)
-
 - Then install npm inquirer within terminal.
   After installed then type,
 
@@ -36,5 +33,12 @@ a series of questions will appear to be answered
 and then all information will be generated in a README file
 
 Link of video demonstrating functionality
+
+
+
+https://github.com/jmalave15/Challenge-9/assets/120431488/718bfa2a-d601-4b6a-b6cf-96344a391491
+
+
+
 
 ## Demo
