@@ -30,7 +30,78 @@ const question = ['Tittle of project','Description of project', 'Process of inst
 let response = [];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    //fs write file function
+
+    let selectedLicense = '';
+    let selectedNotice = ``;
+    for (let i = 0; i < data.length; i++) {
+
+        let firstWord;
+        firstWord = data.license[i].split(' ')[0];
+
+        if (firstWord === 'Apache') {
+            selectedLicense = selectedLicense + Apache;
+            selectedNotice = `${selectedNotice}
+            
+            ${noticeApache}`;
+
+        }
+        if (firstWord === 'MIT') {
+            selectedLicense = selectedLicense + MIT;
+            selectedNotice = `${selectedNotice}
+
+            ${noticeMIT}`;
+        
+        }
+    }
+
+    cosnt completedReadme = `
+    
+    # ${data.title}
+    ${selectedLicense}
+
+    ## Description
+
+    ${data.description}
+
+    ## Table of Contents
+
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Credits](#credits)
+    * [Tests](#tests)
+    * [Questions](#questions)
+    * [License](#license)
+
+    ## Installation
+    ${data.installation}
+    
+    ![alt text](./assests/screen1.png)
+
+    ## Usage
+
+    ${data.usage}
+
+    ![alt text](./assests/screen2.png)
+    
+    Link of video demonstrating functionality
+    
+    ### Credits
+    - Node.js
+    - Inquirer package
+
+    ### Contributing
+    ${data.contributing}
+
+    ### Tests
+    ${data.testsInstructions}
+
+    # License
+    ${selectedNotice}
+    
+    `
+}
 
 // TODO: Create a function to initialize app
 function init() {
