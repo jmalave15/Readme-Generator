@@ -56,7 +56,7 @@ function writeToFile(fileName, data) {
         }
     }
 
-    cosnt completedReadme = `
+    const completedReadme = `
     
     # ${data.title}
     ${selectedLicense}
@@ -101,7 +101,16 @@ function writeToFile(fileName, data) {
     ${selectedNotice}
     
     `
-}
+
+    fs.writeFile(fileName, completedReadme, function (err, data) {
+        if (err){
+            console.log(err);
+            return;
+        } else {
+            console.log(data);
+        }
+    })
+};
 
 // TODO: Create a function to initialize app
 function init() {
@@ -156,9 +165,9 @@ function init() {
         }
 
     ])
-    .then ((data)) => {
-        const fileName = 'README.md';
-        writeToFile(data, fileName)
+    .then ((data) => {
+        const fileName = 'README-Generated.md';
+        writeToFile(fileName, data);
     })
 
 }
